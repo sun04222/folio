@@ -145,8 +145,8 @@ export const EvaluationCenter: React.FC = () => {
   }
 
   return (
-    <div className="folio-evaluation-view flex h-full flex-col bg-[#f6f8fb]" data-testid="evaluation-center">
-      <header className="folio-evaluation-header flex items-center justify-between border-b border-[var(--mac-border)] bg-white px-5 py-4">
+    <div className="folio-evaluation-view flex h-full flex-col bg-surface-muted" data-testid="evaluation-center">
+      <header className="folio-evaluation-header flex items-center justify-between border-b border-[var(--mac-border)] bg-surface px-5 py-4">
         <div>
           <h2 className="text-[15px] font-semibold text-foreground">{t('evaluation.center')}</h2>
           <p className="mt-0.5 text-[11.5px] text-text-muted">{t('evaluation.centerDescription')}</p>
@@ -180,7 +180,7 @@ export const EvaluationCenter: React.FC = () => {
             <Spinner /> {t('evaluation.loadingExperiments')}
           </div>
         ) : loadError && experiments.length === 0 ? (
-          <div className="rounded-[10px] border border-[color-mix(in_srgb,var(--info)_30%,transparent)] bg-white px-4 py-3 text-[12px] text-foreground/78 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
+          <div className="rounded-[10px] border border-[color-mix(in_srgb,var(--info)_30%,transparent)] bg-surface px-4 py-3 text-[12px] text-foreground/78 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
             {loadError}
             <button
               type="button"
@@ -215,7 +215,7 @@ export const EvaluationCenter: React.FC = () => {
 // ── Overview (spec §65, §111) ───────────────────────────────────────────────
 
 const StatCard: React.FC<{ label: string; value: string; sub?: string }> = ({ label, value, sub }) => (
-  <div className="folio-evaluation-stat-card rounded-[10px] border border-[var(--mac-border)] bg-white p-4 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
+  <div className="folio-evaluation-stat-card rounded-[10px] border border-[var(--mac-border)] bg-surface p-4 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
     <p className="text-[11px] font-medium uppercase tracking-wide text-foreground/44">{label}</p>
     <p className="mt-1.5 text-[22px] font-semibold tabular-nums text-foreground">{value}</p>
     {sub && <p className="mt-1 text-[11px] text-foreground/44">{sub}</p>}
@@ -223,7 +223,7 @@ const StatCard: React.FC<{ label: string; value: string; sub?: string }> = ({ la
 );
 
 const FailureModeTag: React.FC<{ mode: string; count: number }> = ({ mode, count }) => (
-  <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--mac-border)] bg-[#f7f9fc] px-2.5 py-0.5 text-[11px] text-foreground/70">
+  <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--mac-border)] bg-surface-muted px-2.5 py-0.5 text-[11px] text-foreground/70">
     {mode} <span className="font-semibold tabular-nums text-foreground">{count}</span>
   </span>
 );
@@ -236,7 +236,7 @@ const OverviewTab: React.FC<{
   const { t } = useTranslation();
   if (!experiment) {
     return (
-      <div className="rounded-[10px] border border-[var(--mac-border)] bg-white p-4 text-[12px] text-foreground/48 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
+      <div className="rounded-[10px] border border-[var(--mac-border)] bg-surface p-4 text-[12px] text-foreground/48 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
         {t('evaluation.noCompletedExperiments')}
       </div>
     );
@@ -244,7 +244,7 @@ const OverviewTab: React.FC<{
   const summary = experiment.summary;
   if (!summary) {
     return (
-      <div className="rounded-[10px] border border-[var(--mac-border)] bg-white p-4 text-[12px] text-foreground/48 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
+      <div className="rounded-[10px] border border-[var(--mac-border)] bg-surface p-4 text-[12px] text-foreground/48 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
         {t('evaluation.latestExperimentNoSummary', { name: experiment.name })}
       </div>
     );
@@ -294,7 +294,7 @@ const OverviewTab: React.FC<{
         />
       </div>
 
-      <div className="rounded-[10px] border border-[var(--mac-border)] bg-white p-5 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
+      <div className="rounded-[10px] border border-[var(--mac-border)] bg-surface p-5 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
         <div className="flex items-center justify-between">
           <h4 className="text-[13px] font-semibold text-foreground">{t('evaluation.perMetricBreakdown')}</h4>
           <span className="text-[11px] text-foreground/42">
@@ -304,7 +304,7 @@ const OverviewTab: React.FC<{
         <div className="mt-3 overflow-x-auto rounded-[8px] border border-[var(--mac-border)]">
           <table className="w-full border-collapse text-[12px]">
             <thead>
-              <tr className="border-b border-[var(--mac-border)] bg-[#f7f9fc]">
+              <tr className="border-b border-[var(--mac-border)] bg-surface-muted">
                 <th className="py-2 pr-3 text-left font-medium text-foreground/54">{t('evaluation.metric')}</th>
                 <th className="px-3 py-2 text-left font-medium text-foreground/54">{t('evaluation.kind')}</th>
                 <th className="px-3 py-2 text-right font-medium text-foreground/54">{t('evaluation.score')}</th>
@@ -313,7 +313,7 @@ const OverviewTab: React.FC<{
             </thead>
             <tbody>
               {summary.metricAggregates.map((aggregate) => (
-                <tr key={aggregate.metric} className="border-b border-[var(--mac-border)] last:border-0 hover:bg-[#f8fbff]">
+                <tr key={aggregate.metric} className="border-b border-[var(--mac-border)] last:border-0 hover:bg-surface">
                   <td className="py-2 pr-3 text-foreground">{t(metricLabel(aggregate.metric))}</td>
                   <td className="px-3 py-2 text-foreground/48">{metricKindLabel(aggregate.metric) !== null ? t(metricKindLabel(aggregate.metric) as string) : '—'}</td>
                   <td className="px-3 py-2 text-right font-medium tabular-nums text-foreground">
@@ -330,7 +330,7 @@ const OverviewTab: React.FC<{
       </div>
 
       {summary.failureModes.length > 0 && (
-        <div className="rounded-[10px] border border-[var(--mac-border)] bg-white p-5 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
+        <div className="rounded-[10px] border border-[var(--mac-border)] bg-surface p-5 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
           <h4 className="text-[13px] font-semibold text-foreground">{t('evaluation.failureModes')}</h4>
           <div className="mt-3 flex flex-wrap gap-2">
             {[...summary.failureModes]
@@ -363,7 +363,7 @@ const ExperimentsTab: React.FC<{
   const { t } = useTranslation();
   if (experiments.length === 0) {
     return (
-      <div className="rounded-[10px] border border-[var(--mac-border)] bg-white p-4 text-[12px] text-foreground/48 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
+      <div className="rounded-[10px] border border-[var(--mac-border)] bg-surface p-4 text-[12px] text-foreground/48 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
         {t('evaluation.noExperimentsRecorded')}
       </div>
     );
@@ -373,10 +373,10 @@ const ExperimentsTab: React.FC<{
       <p className="text-[11px] text-foreground/44">
         {t('evaluation.experimentsIntro', { count: experiments.length })}
       </p>
-      <div className="overflow-x-auto rounded-[10px] border border-[var(--mac-border)] bg-white shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
+      <div className="overflow-x-auto rounded-[10px] border border-[var(--mac-border)] bg-surface shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
         <table className="w-full border-collapse text-[12px]" data-testid="experiments-table">
           <thead>
-            <tr className="border-b border-[var(--mac-border)] bg-[#f7f9fc]">
+            <tr className="border-b border-[var(--mac-border)] bg-surface-muted">
               <th className="py-2 pr-3 text-left font-medium text-foreground/54">{t('evaluation.name')}</th>
               <th className="px-3 py-2 text-left font-medium text-foreground/54">{t('evaluation.dataset')}</th>
               <th className="px-3 py-2 text-left font-medium text-foreground/54">{t('evaluation.model')}</th>
@@ -392,7 +392,7 @@ const ExperimentsTab: React.FC<{
             {experiments.map((experiment) => {
               const status = STATUS_LABEL[experiment.status] ?? STATUS_LABEL.queued;
               return (
-                <tr key={experiment.id} className="border-b border-[var(--mac-border)] last:border-0 hover:bg-[#f8fbff]">
+                <tr key={experiment.id} className="border-b border-[var(--mac-border)] last:border-0 hover:bg-surface">
                   <td className="py-2 pr-3 font-medium text-foreground">{experiment.name}</td>
                   <td className="px-3 py-2 text-foreground/64">
                     {experiment.datasetId} <span className="text-foreground/36">v{experiment.datasetVersion}</span>
@@ -435,7 +435,7 @@ const ModelComparisonTab: React.FC<{ experiments: EvaluationExperiment[] }> = ({
 
   if (groups.length === 0) {
     return (
-      <div className="rounded-[10px] border border-[var(--mac-border)] bg-white p-4 text-[12px] text-foreground/48 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
+      <div className="rounded-[10px] border border-[var(--mac-border)] bg-surface p-4 text-[12px] text-foreground/48 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
         {t('evaluation.noCompletedToCompare')}
       </div>
     );
@@ -445,10 +445,10 @@ const ModelComparisonTab: React.FC<{ experiments: EvaluationExperiment[] }> = ({
       <p className="text-[11px] text-foreground/44">
         {t('evaluation.modelComparisonIntro')}
       </p>
-      <div className="overflow-x-auto rounded-[10px] border border-[var(--mac-border)] bg-white shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
+      <div className="overflow-x-auto rounded-[10px] border border-[var(--mac-border)] bg-surface shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
         <table className="w-full border-collapse text-[12px]" data-testid="model-comparison-table">
           <thead>
-            <tr className="border-b border-[var(--mac-border)] bg-[#f7f9fc]">
+            <tr className="border-b border-[var(--mac-border)] bg-surface-muted">
               <th className="py-2 pr-3 text-left font-medium text-foreground/54">{t('evaluation.metric')}</th>
               {groups.map((group) => (
                 <th key={group.key} className="px-3 py-2 text-left font-medium text-foreground/54">
@@ -462,7 +462,7 @@ const ModelComparisonTab: React.FC<{ experiments: EvaluationExperiment[] }> = ({
           </thead>
           <tbody>
             {rows.map((row) => (
-              <tr key={row.metricId} className="border-b border-[var(--mac-border)] last:border-0 hover:bg-[#f8fbff]">
+              <tr key={row.metricId} className="border-b border-[var(--mac-border)] last:border-0 hover:bg-surface">
                 <td className="py-2 pr-3">
                   <div className="font-medium text-foreground">{t(row.label)}</div>
                   {row.kind && <div className="text-[10px] text-foreground/40">{t(row.kind)}</div>}

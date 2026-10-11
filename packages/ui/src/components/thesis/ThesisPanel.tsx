@@ -39,12 +39,12 @@ const ThesisCard: React.FC<ThesisCardProps> = ({ thesis, onReEvaluate, onEdit })
   const badge = STANCE_BADGE[thesis.stance];
   return (
     <div
-      className="folio-thesis-card rounded-[12px] border border-[#dfe5ed] bg-white p-4 shadow-[0_1px_2px_rgba(15,23,42,0.035)]"
+      className="folio-thesis-card rounded-[12px] border border-border bg-surface p-4 shadow-[0_1px_2px_rgba(15,23,42,0.035)]"
       data-testid="thesis-card"
     >
       <div className="flex items-center justify-between gap-2">
         <span
-          className="inline-flex items-center rounded-[5px] border border-[#dfe5ed] bg-[#f7f9fc] px-1.5 py-0.5 text-[9.5px] font-semibold uppercase tracking-[0.08em]"
+          className="inline-flex items-center rounded-[5px] border border-border bg-surface-muted px-1.5 py-0.5 text-[9.5px] font-semibold uppercase tracking-[0.08em]"
           style={{ color: badge.color }}
         >
           {t(`thesis.stance.${thesis.stance}`)}
@@ -54,7 +54,7 @@ const ThesisCard: React.FC<ThesisCardProps> = ({ thesis, onReEvaluate, onEdit })
             variant="ghost"
             size="sm"
             onClick={onEdit}
-            className="text-[11px] text-[#68778c] hover:bg-[#f4f7fc] hover:text-foreground"
+            className="text-[11px] text-text-muted hover:bg-surface-muted hover:text-foreground"
           >
             {t('common.edit')}
           </Button>
@@ -62,7 +62,7 @@ const ThesisCard: React.FC<ThesisCardProps> = ({ thesis, onReEvaluate, onEdit })
             variant="outline"
             size="sm"
             onClick={onReEvaluate}
-            className="border-[#d8e0eb] text-[11px] text-foreground/75 hover:border-[#a9bce1] hover:bg-[#f4f7fc]"
+            className="border-border text-[11px] text-foreground/75 hover:border-border-strong hover:bg-surface-muted"
           >
             {t('thesis.reEvaluate')}
           </Button>
@@ -78,7 +78,7 @@ const ThesisCard: React.FC<ThesisCardProps> = ({ thesis, onReEvaluate, onEdit })
         <PointList title={t('thesis.risks')} points={thesis.risks} tone="#f59e0b" />
       </div>
 
-      <div className="mt-4 border-t border-[#edf0f4] pt-2.5 text-[10px] tabular-nums text-[#8792a3]">
+      <div className="mt-4 border-t border-border pt-2.5 text-[10px] tabular-nums text-text-muted">
         {t('thesis.lastReviewed', { date: new Date(thesis.lastReviewedAt).toLocaleDateString() })}
       </div>
     </div>
@@ -138,13 +138,13 @@ export const ThesisPanel: React.FC = () => {
 
   if (!symbol) {
     return (
-      <div data-testid="thesis-panel" className="folio-thesis-view flex h-full items-center justify-center bg-[#f6f8fb] p-4">
-        <div className="folio-thesis-empty mx-auto w-full max-w-sm rounded-[12px] border border-[#dfe5ed] bg-white p-5 text-center shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
+      <div data-testid="thesis-panel" className="folio-thesis-view flex h-full items-center justify-center bg-surface-muted p-4">
+        <div className="folio-thesis-empty mx-auto w-full max-w-sm rounded-[12px] border border-border bg-surface p-5 text-center shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
           <div className="text-[15px] font-semibold text-foreground">{t('thesis.empty.title')}</div>
           <p className="mt-1 text-[12px] text-foreground/54">{t('thesis.empty.subtitle')}</p>
           <Button
             size="sm"
-            className="mt-3 bg-[#0052ff] text-white hover:bg-[#0045d8]"
+            className="mt-3 bg-primary text-primary-foreground hover:bg-primary/90"
             onClick={() => setNavSection('research')}
           >
             {t('thesis.empty.goResearch')}
@@ -176,8 +176,8 @@ export const ThesisPanel: React.FC = () => {
   };
 
   return (
-    <div className="folio-thesis-view flex h-full flex-col overflow-y-auto bg-[#f6f8fb] p-4" data-testid="thesis-panel">
-      <div className="folio-thesis-header mb-4 flex items-end justify-between gap-4 border-b border-[#dfe5ed] pb-4">
+    <div className="folio-thesis-view flex h-full flex-col overflow-y-auto bg-surface-muted p-4" data-testid="thesis-panel">
+      <div className="folio-thesis-header mb-4 flex items-end justify-between gap-4 border-b border-border pb-4">
         <div>
           <p className="folio-eyebrow">{t('thesis.thesis')}</p>
           <h2 className="folio-thesis-title">{symbol}</h2>
@@ -188,7 +188,7 @@ export const ThesisPanel: React.FC = () => {
             size="sm"
             onClick={handleSaveFromReport}
             disabled={loading}
-            className="bg-[#0052ff] text-white hover:bg-[#0045d8]"
+            className="bg-primary text-primary-foreground hover:bg-primary/90"
           >
             {t('thesis.saveAsThesis')}
           </Button>
@@ -196,15 +196,15 @@ export const ThesisPanel: React.FC = () => {
       </div>
 
       {!report && (
-        <div className="mb-3 rounded-[9px] border border-dashed border-[#cbd5e1] bg-white px-3 py-2.5 text-[12px] leading-5 text-foreground/54">
+        <div className="mb-3 rounded-[9px] border border-dashed border-border-strong bg-surface px-3 py-2.5 text-[12px] leading-5 text-foreground/54">
           {t('thesis.noReportFor', { symbol })}
         </div>
       )}
 
       {loading && symbolTheses.length === 0 ? (
-        <div className="h-24 animate-pulse rounded-[10px] border border-[#dfe5ed] bg-white" />
+        <div className="h-24 animate-pulse rounded-[10px] border border-border bg-surface" />
       ) : symbolTheses.length === 0 ? (
-        <div className="rounded-[10px] border border-dashed border-[#dfe5ed] bg-white py-8 text-center text-[13px] text-foreground/44">
+        <div className="rounded-[10px] border border-dashed border-border bg-surface py-8 text-center text-[13px] text-foreground/44">
           {t('thesis.noneSaved')}
         </div>
       ) : (
@@ -233,7 +233,7 @@ export const ThesisPanel: React.FC = () => {
       )}
 
       {lastImpact && (
-        <div className="mt-3 rounded-[9px] border border-[#cfe0ff] bg-[#eef4ff] px-3 py-2.5 text-[12px] leading-5 text-foreground/75">
+        <div className="mt-3 rounded-[9px] border border-border-strong bg-accent-soft px-3 py-2.5 text-[12px] leading-5 text-foreground/75">
           {t('thesis.reEvaluateComplete')}
         </div>
       )}
@@ -249,8 +249,8 @@ export const ThesisPanel: React.FC = () => {
         </div>
       )}
 
-      <div className="folio-thesis-history mt-5 border-t border-[#dfe5ed] pt-4">
-        <h3 className="mb-2.5 text-[10px] font-semibold uppercase tracking-[0.1em] text-[#7f8b9d]">
+      <div className="folio-thesis-history mt-5 border-t border-border pt-4">
+        <h3 className="mb-2.5 text-[10px] font-semibold uppercase tracking-[0.1em] text-text-muted">
           {t('thesis.reEvaluationHistory')}
         </h3>
         <ThesisImpactList impacts={symbolImpacts} />

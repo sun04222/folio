@@ -22,13 +22,13 @@ interface ListFieldProps {
 
 const ListField: React.FC<ListFieldProps> = ({ label, value, onChange, placeholder }) => (
   <label className="flex flex-col gap-1.5">
-    <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-[#68778c]">{label}</span>
+    <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-text-muted">{label}</span>
     <textarea
       value={value}
       onChange={(event) => onChange(event.target.value)}
       placeholder={placeholder}
       rows={3}
-      className="resize-y rounded-[7px] border border-[#d8e0eb] bg-white px-3 py-2 text-[12px] leading-5 text-foreground placeholder:text-foreground/38 outline-none transition-smooth focus:border-[#0052ff] focus:ring-2 focus:ring-[#0052ff]/15"
+      className="resize-y rounded-[7px] border border-border bg-surface px-3 py-2 text-[12px] leading-5 text-foreground placeholder:text-foreground/38 outline-none transition-smooth focus:border-primary focus:ring-2 focus:ring-ring/15"
     />
   </label>
 );
@@ -69,9 +69,9 @@ export const ThesisEditor: React.FC<{
   };
 
   return (
-    <div className="folio-thesis-editor space-y-3 rounded-[12px] border border-[#bfd2ff] border-l-2 border-l-[#0052ff] bg-white p-4 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
+    <div className="folio-thesis-editor space-y-3 rounded-[12px] border border-border-strong border-l-2 border-l-[#0052ff] bg-surface p-4 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
       <div className="flex flex-wrap items-center gap-2">
-        <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-[#68778c]">
+        <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-text-muted">
           {t('thesis.editor.stance')}
         </span>
         <div className="flex gap-1">
@@ -80,10 +80,10 @@ export const ThesisEditor: React.FC<{
               key={option}
               type="button"
               onClick={() => setStance(option)}
-              className={`rounded-[6px] border px-2.5 py-1 text-[11px] font-semibold transition-smooth focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0052ff]/25 ${
+              className={`rounded-[6px] border px-2.5 py-1 text-[11px] font-semibold transition-smooth focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/25 ${
                 stance === option
-                  ? 'border-[#0052ff] bg-[#0052ff] text-white'
-                  : 'border-[#d8e0eb] bg-[#fbfcfe] text-foreground/70 hover:border-[#a9bce1] hover:bg-[#f4f7fc]'
+                  ? 'border-primary bg-primary text-primary-foreground'
+                  : 'border-border bg-surface text-foreground/70 hover:border-border-strong hover:bg-surface-muted'
               }`}
             >
               {t(`thesis.stance.${option}`)}
@@ -93,12 +93,12 @@ export const ThesisEditor: React.FC<{
       </div>
 
       <label className="flex flex-col gap-1.5">
-        <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-[#68778c]">{t('thesis.editor.coreThesis')}</span>
+        <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-text-muted">{t('thesis.editor.coreThesis')}</span>
         <textarea
           value={summary}
           onChange={(event) => setSummary(event.target.value)}
           rows={2}
-          className="resize-y rounded-[7px] border border-[#d8e0eb] bg-white px-3 py-2 text-[12px] leading-5 text-foreground outline-none transition-smooth focus:border-[#0052ff] focus:ring-2 focus:ring-[#0052ff]/15"
+          className="resize-y rounded-[7px] border border-border bg-surface px-3 py-2 text-[12px] leading-5 text-foreground outline-none transition-smooth focus:border-primary focus:ring-2 focus:ring-ring/15"
         />
       </label>
 
@@ -110,13 +110,13 @@ export const ThesisEditor: React.FC<{
       </div>
 
       <label className="flex flex-col gap-1.5">
-        <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-[#68778c]">{t('thesis.editor.targetPriceOptional')}</span>
+        <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-text-muted">{t('thesis.editor.targetPriceOptional')}</span>
         <input
           value={targetPrice}
           onChange={(event) => setTargetPrice(event.target.value)}
           inputMode="decimal"
           placeholder={t('thesis.editor.targetPricePlaceholder')}
-          className="rounded-[7px] border border-[#d8e0eb] bg-white px-3 py-2 font-mono text-[12px] tabular-nums text-foreground outline-none transition-smooth placeholder:text-foreground/38 focus:border-[#0052ff] focus:ring-2 focus:ring-[#0052ff]/15"
+          className="rounded-[7px] border border-border bg-surface px-3 py-2 font-mono text-[12px] tabular-nums text-foreground outline-none transition-smooth placeholder:text-foreground/38 focus:border-primary focus:ring-2 focus:ring-ring/15"
         />
       </label>
 
@@ -128,7 +128,7 @@ export const ThesisEditor: React.FC<{
           size="sm"
           onClick={handleSave}
           disabled={saving}
-          className="bg-[#0052ff] text-white hover:bg-[#0045d8]"
+          className="bg-primary text-primary-foreground hover:bg-primary/90"
         >
           {saving ? t('thesis.editor.saving') : t('common.save')}
         </Button>

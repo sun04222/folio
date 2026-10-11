@@ -401,7 +401,7 @@ const RunFooter: React.FC<{
         failed ? 'border-destructive/24 bg-destructive/5' : 'border-border bg-surface-muted'
       }`}
     >
-      <span className={`text-[11px] ${failed ? 'text-negative' : 'text-foreground/60'}`}>{summary}</span>
+      <span className={`text-[11px] ${failed ? 'text-danger' : 'text-foreground/60'}`}>{summary}</span>
       <button
         type="button"
         onClick={onOpenTrace}

@@ -12,8 +12,8 @@ interface ToolActivityProps { toolCalls: ToolActivityCall[]; }
 
 const StatusIcon: React.FC<{ status: ToolActivityCall['status'] }> = ({ status }) => {
   if (status === 'running') return <LoaderCircle className="h-3.5 w-3.5 shrink-0 animate-spin text-accent" />;
-  if (status === 'success') return <Check className="h-3.5 w-3.5 shrink-0 text-positive" />;
-  return <X className="h-3.5 w-3.5 shrink-0 text-negative" />;
+  if (status === 'success') return <Check className="h-3.5 w-3.5 shrink-0 text-success" />;
+  return <X className="h-3.5 w-3.5 shrink-0 text-danger" />;
 };
 
 function formatDuration(startedAt: number, completedAt: number | undefined): string | null {
@@ -37,7 +37,7 @@ export const ToolActivity: React.FC<ToolActivityProps> = ({ toolCalls }) => {
   const failed = toolCalls.some((call) => call.status === 'error');
   return <div className="rounded-[9px] border border-border bg-surface-muted px-3 py-2">
     <button data-testid="tool-activity-toggle" type="button" aria-expanded={expanded} onClick={() => setExpanded((value) => !value)} className="flex w-full items-center gap-2 text-left text-[11px] text-foreground/64">
-      <span className={`h-1.5 w-1.5 rounded-full ${running ? 'animate-pulse bg-accent' : failed ? 'bg-negative' : 'bg-positive'}`} />
+      <span className={`h-1.5 w-1.5 rounded-full ${running ? 'animate-pulse bg-accent' : failed ? 'bg-danger' : 'bg-success'}`} />
       <span className="font-medium">{running ? t('agent.tool.running') : t('agent.tool.analyzedSources', { count: toolCalls.length })}</span>
       <span className="flex-1" /><ChevronDown className={`h-3.5 w-3.5 text-foreground/34 transition-transform ${expanded ? 'rotate-180' : ''}`} />
     </button>
@@ -52,7 +52,7 @@ export const ToolActivity: React.FC<ToolActivityProps> = ({ toolCalls }) => {
         <span className="flex-1" />
         {toolCall.status === 'running' && <span className="text-foreground/38">{t('agent.tool.statusRunning')}</span>}
         {duration && <span className="font-mono text-[9.5px] text-foreground/40">{duration}</span>}
-        {toolCall.status === 'error' && <span className="text-[9.5px] text-negative/75">{t('agent.tool.failed')}</span>}
+        {toolCall.status === 'error' && <span className="text-[9.5px] text-danger/75">{t('agent.tool.failed')}</span>}
       </div>;
       })}
     </div>}

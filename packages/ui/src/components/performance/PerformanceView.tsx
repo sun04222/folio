@@ -102,8 +102,8 @@ export const PerformanceView: React.FC = () => {
   }));
 
   return (
-    <div className="min-h-full w-full max-w-5xl bg-[#f6f8fb]" data-testid="performance-view">
-      <header className="flex flex-wrap items-start justify-between gap-3 border-b border-[#dfe5ed] pb-3">
+    <div className="min-h-full w-full max-w-5xl bg-surface-muted" data-testid="performance-view">
+      <header className="flex flex-wrap items-start justify-between gap-3 border-b border-border pb-3">
         <div>
           <h2 className="text-[17px] font-semibold tracking-[-0.02em] text-foreground">
             {t('performance.title')}
@@ -113,7 +113,7 @@ export const PerformanceView: React.FC = () => {
           </p>
         </div>
         <div
-          className="flex items-center gap-0.5 rounded-[8px] border border-[#dfe5ed] bg-white p-0.5"
+          className="flex items-center gap-0.5 rounded-[8px] border border-border bg-surface p-0.5"
           data-testid="performance-horizons"
         >
           {HORIZONS.map((h) => (
@@ -121,10 +121,10 @@ export const PerformanceView: React.FC = () => {
               key={h}
               type="button"
               onClick={() => setHorizon(h)}
-              className={`rounded-[6px] px-3 py-1.5 text-[11px] font-semibold tabular-nums transition-smooth focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0052ff]/30 ${
+              className={`rounded-[6px] px-3 py-1.5 text-[11px] font-semibold tabular-nums transition-smooth focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 ${
                 horizon === h
-                  ? 'bg-[#0052ff] text-white shadow-[0_1px_2px_rgba(0,82,255,0.18)]'
-                  : 'text-[#68778c] hover:bg-[#f4f7fc] hover:text-foreground'
+                  ? 'bg-primary text-primary-foreground shadow-[0_1px_2px_rgba(0,82,255,0.18)]'
+                  : 'text-text-muted hover:bg-surface-muted hover:text-foreground'
               }`}
             >
               {t(HORIZON_LABEL[h])}
@@ -133,7 +133,7 @@ export const PerformanceView: React.FC = () => {
         </div>
       </header>
       {state.loading && (
-        <p className="mt-3 rounded-[7px] border border-[#dfe5ed] bg-white px-3 py-2 text-[11px] text-text-muted">
+        <p className="mt-3 rounded-[7px] border border-border bg-surface px-3 py-2 text-[11px] text-text-muted">
           {t('performance.loading')}
         </p>
       )}
@@ -151,8 +151,8 @@ export const PerformanceView: React.FC = () => {
           emptyMessage={t('performance.noStrategyOutcomes')}
         />
       </div>
-      <div className="mt-7 border-t border-[#dfe5ed] pt-5" data-testid="calibration-area">
-        <h3 className="text-[10px] font-semibold uppercase tracking-[0.1em] text-[#7f8b9d]">
+      <div className="mt-7 border-t border-border pt-5" data-testid="calibration-area">
+        <h3 className="text-[10px] font-semibold uppercase tracking-[0.1em] text-text-muted">
           {t('performance.calibrationAdvanced')}
         </h3>
         <p className="mt-1 text-[11px] leading-5 text-text-muted">

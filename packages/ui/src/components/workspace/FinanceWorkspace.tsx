@@ -92,8 +92,8 @@ const SecurityWorkspace: React.FC = () => {
 
   if (!activeSymbol) {
     return (
-      <div className="flex h-full items-center justify-center bg-[#f7f8fa] p-6 text-center">
-        <div className="w-full max-w-md rounded-[16px] border border-[var(--mac-border)] bg-white px-8 py-10 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
+      <div className="flex h-full items-center justify-center bg-surface-muted p-6 text-center">
+        <div className="w-full max-w-md rounded-[16px] border border-[var(--mac-border)] bg-surface px-8 py-10 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
           <div className="text-[15px] font-semibold text-foreground/80">
           {t('security.workspace.emptyTitle')}
           </div>
@@ -106,9 +106,9 @@ const SecurityWorkspace: React.FC = () => {
   }
 
   return (
-    <div className="folio-security-workspace flex h-full flex-col bg-[#f7f8fa]">
+    <div className="folio-security-workspace flex h-full flex-col bg-surface-muted">
       <SecurityHeader />
-      <div className="border-b border-[var(--mac-border)] bg-white px-4">
+      <div className="border-b border-[var(--mac-border)] bg-surface px-4">
         <Tabs value={activeView} onValueChange={(value) => setActiveView(value as WorkspaceView)}>
           <TabsList className="gap-0 border-0">
             {WORKSPACE_TABS.map((tab) => <TabsTrigger key={tab.value} value={tab.value}>{tab.label}</TabsTrigger>)}

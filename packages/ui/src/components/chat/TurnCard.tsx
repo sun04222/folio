@@ -64,7 +64,7 @@ export const TurnCard: React.FC<TurnCardProps> = ({ message }) => {
         )}
         {isAssistant && (
           <div className="mt-2 flex items-center gap-3">
-            <span className={`text-[11px] ${isUser ? 'text-white/68' : 'text-foreground/38'}`}>
+            <span className={`text-[11px] ${isUser ? 'text-primary-foreground/68' : 'text-foreground/38'}`}>
               {new Date(message.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
             </span>
             {citationIndex.sources.length > 0 && (

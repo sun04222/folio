@@ -115,7 +115,7 @@ export const SkillsView: React.FC = () => {
                 onClick={() => setStatus(filter.value)}
                 className={`rounded-full border px-3 py-1 text-[12px] font-medium transition-smooth focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
                   active
-                    ? 'border-accent bg-accent text-white'
+                    ? 'border-accent bg-accent text-primary-foreground'
                     : 'border-border text-foreground/64 hover:border-border-strong hover:bg-surface-hover hover:text-foreground active:scale-95'
                 }`}
               >

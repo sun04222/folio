@@ -73,7 +73,7 @@ export const CompareWorkspace: React.FC = () => {
             size="sm"
             onClick={add}
             disabled={symbols.length >= 4}
-            className="h-9 shrink-0 rounded-[8px] bg-[var(--mac-blue)] px-3.5 text-[12px] text-white hover:bg-[var(--mac-blue-hover)]"
+            className="h-9 shrink-0 rounded-[8px] bg-[var(--mac-blue)] px-3.5 text-[12px] text-primary-foreground hover:bg-[var(--mac-blue-hover)]"
           >
             <span data-testid="compare-add">{t('common.add')}</span>
           </Button>

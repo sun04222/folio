@@ -344,7 +344,7 @@ export const ResearchPanel: React.FC = () => {
               report={report}
               nextAction={
                 thesisSaved ? (
-                  <div data-testid="thesis-saved-banner" className="folio-pilot-next-action text-[12.5px] font-medium text-positive">
+                  <div data-testid="thesis-saved-banner" className="folio-pilot-next-action text-[12.5px] font-medium text-success">
                     {t('research.next.thesisSaved')}
                   </div>
                 ) : (
@@ -452,9 +452,9 @@ const RunProgressCard: React.FC<{ run: ResearchRunSummary }> = ({ run }) => {
               key={capabilityId}
               className={`inline-flex items-center gap-1 rounded-[6px] px-1.5 py-0.5 text-[10.5px] font-medium ${
                 doneCap
-                  ? 'bg-positive/12 text-positive'
+                  ? 'bg-success/12 text-success'
                   : failedCap
-                    ? 'bg-negative/12 text-negative'
+                    ? 'bg-danger/12 text-danger'
                     : 'bg-foreground/8 text-text-muted'
               }`}
             >

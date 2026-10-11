@@ -30,7 +30,7 @@ interface BlockProps {
 }
 
 const Block: React.FC<BlockProps> = ({ title, children }) => (
-  <section className="rounded-[14px] border border-[var(--mac-border)] bg-white p-4 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
+  <section className="rounded-[14px] border border-[var(--mac-border)] bg-surface p-4 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
     <h3 className="mb-3 text-[10px] font-semibold uppercase tracking-[0.11em] text-foreground/48">
       {title}
     </h3>

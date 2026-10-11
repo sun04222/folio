@@ -62,7 +62,7 @@ export const FinancialsView: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-1 gap-3 lg:grid-cols-2">
-      <section className="rounded-[14px] border border-[var(--mac-border)] bg-white p-4 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
+      <section className="rounded-[14px] border border-[var(--mac-border)] bg-surface p-4 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
         <h3 className="mb-2 text-[10px] font-semibold uppercase tracking-[0.11em] text-foreground/48">
           {t('security.financials.valuationMetrics')}
         </h3>
@@ -100,7 +100,7 @@ export const FinancialsView: React.FC = () => {
         </table>
       </section>
 
-      <section className="rounded-[14px] border border-[var(--mac-border)] bg-white p-4 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
+      <section className="rounded-[14px] border border-[var(--mac-border)] bg-surface p-4 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
         <h3 className="mb-2 text-[10px] font-semibold uppercase tracking-[0.11em] text-foreground/48">
           {t('security.financials.staticInfo')}
         </h3>

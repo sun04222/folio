@@ -82,7 +82,7 @@ export function ChartView() {
   } else if (status === 'error') {
     body = (
       <div className="flex h-full flex-col items-center justify-center gap-3 px-4 text-center">
-        <span className="text-[12.5px] text-negative">
+        <span className="text-[12.5px] text-danger">
           {error ?? t('security.chart.loadFailed')}
         </span>
         <Button variant="outline" size="sm" onClick={retry}>
@@ -109,8 +109,8 @@ export function ChartView() {
   }
 
   return (
-    <div className="flex h-full min-h-0 flex-col gap-3 bg-[#f7f8fa] p-4">
-      <div className="flex items-center gap-1 rounded-[12px] border border-[var(--mac-border)] bg-white px-2 py-1.5 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
+    <div className="flex h-full min-h-0 flex-col gap-3 bg-surface-muted p-4">
+      <div className="flex items-center gap-1 rounded-[12px] border border-[var(--mac-border)] bg-surface px-2 py-1.5 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
         {PERIODS.map((value) => (
           <button
             key={value}
@@ -118,8 +118,8 @@ export function ChartView() {
             aria-pressed={period === value}
             className={`h-6 rounded-[6px] px-2.5 text-[11.5px] font-medium tabular-nums transition-smooth ${
               period === value
-                ? 'bg-[#0052ff] text-white'
-                : 'text-text-muted hover:bg-[#f0f2f5] hover:text-foreground'
+                ? 'bg-primary text-primary-foreground'
+                : 'text-text-muted hover:bg-surface-muted hover:text-foreground'
             }`}
           >
             {value}
@@ -134,7 +134,7 @@ export function ChartView() {
           />
         </div>
       </div>
-      <div className="min-h-0 flex-1 overflow-hidden rounded-[14px] border border-[var(--mac-border)] bg-white shadow-[0_1px_2px_rgba(15,23,42,0.035)]">{body}</div>
+      <div className="min-h-0 flex-1 overflow-hidden rounded-[14px] border border-[var(--mac-border)] bg-surface shadow-[0_1px_2px_rgba(15,23,42,0.035)]">{body}</div>
     </div>
   );
 }

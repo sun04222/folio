@@ -36,7 +36,7 @@ export const TitleBar: React.FC = () => {
           type="button"
           onClick={() => setAboutOpen(true)}
           aria-label={t('navigation.aboutAria')}
-          className="flex h-5 w-5 items-center justify-center rounded text-foreground/50 transition-smooth hover:bg-black/5 hover:text-foreground"
+          className="flex h-5 w-5 items-center justify-center rounded text-foreground/50 transition-smooth hover:bg-background/5 hover:text-foreground"
         >
           <Info className="h-3.5 w-3.5" strokeWidth={1.7} />
         </button>

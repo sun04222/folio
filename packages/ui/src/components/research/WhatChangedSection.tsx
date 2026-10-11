@@ -8,20 +8,24 @@ import type {
   ResearchReport,
 } from '@finagent/core';
 
+/* Direction here reads as a VALUE JUDGEMENT (better / worse), not as a market
+   move. Outcome semantics stay colour-stable: green = better, red = worse.
+   Market semantics (--positive/--negative) would invert this under the
+   Chinese red-up/green-down convention, which would read as "improved = red". */
 const DIRECTION_META: Record<DiffDirection, { arrow: string; tone: string }> = {
-  improved: { arrow: '▲', tone: 'text-positive' },
-  worsened: { arrow: '▼', tone: 'text-negative' },
+  improved: { arrow: '▲', tone: 'text-success' },
+  worsened: { arrow: '▼', tone: 'text-danger' },
   unchanged: { arrow: '=', tone: 'text-text-muted' },
-  new: { arrow: '+', tone: 'text-positive' },
+  new: { arrow: '+', tone: 'text-success' },
   removed: { arrow: '−', tone: 'text-text-muted' },
 };
 
 type ImpactDirection = NonNullable<ResearchDiff['thesisImpact']>['direction'];
 
 const IMPACT_TONE: Record<ImpactDirection, string> = {
-  invalidated: 'text-negative',
-  weakened: 'text-negative',
-  strengthened: 'text-positive',
+  invalidated: 'text-danger',
+  weakened: 'text-danger',
+  strengthened: 'text-success',
   unchanged: 'text-text-muted',
 };
 

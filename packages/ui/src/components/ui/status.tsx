@@ -10,5 +10,5 @@ export function EmptyState({ title, description, action }: { title: string; desc
 }
 
 export function ErrorState({ title = 'Something went wrong', description, action }: { title?: string; description?: string; action?: React.ReactNode }) {
-  return <div role="alert" className="flex min-h-28 flex-col items-center justify-center px-4 py-8 text-center"><p className="text-[13px] font-medium text-negative">{title}</p>{description && <p className="mt-1 max-w-sm text-[12px] text-foreground/48">{description}</p>}{action && <div className="mt-3">{action}</div>}</div>;
+  return <div role="alert" className="flex min-h-28 flex-col items-center justify-center px-4 py-8 text-center"><p className="text-[13px] font-medium text-danger">{title}</p>{description && <p className="mt-1 max-w-sm text-[12px] text-foreground/48">{description}</p>}{action && <div className="mt-3">{action}</div>}</div>;
 }

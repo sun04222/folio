@@ -167,7 +167,7 @@ export const CommandPalette: React.FC = () => {
 
   return (
     <div className="fixed inset-0 z-(--z-index-modal) flex items-start justify-center pt-[16vh]">
-      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={close} />
+      <div className="absolute inset-0 bg-background/50 backdrop-blur-sm" onClick={close} />
       <CommandPrimitive shouldFilter={false} loop className="relative w-full max-w-xl overflow-hidden rounded-[12px] border border-border bg-surface text-foreground shadow-[0_20px_60px_rgba(0,0,0,.18)]">
         <div className="flex items-center gap-2 border-b border-border px-4">
           <Search className="h-4 w-4 shrink-0 text-foreground/38" />

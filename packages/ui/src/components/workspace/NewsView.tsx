@@ -68,7 +68,7 @@ export const NewsView: React.FC = () => {
         {Array.from({ length: 5 }).map((_, i) => (
           <div
             key={i}
-            className="h-16 animate-pulse rounded-[12px] border border-[var(--mac-border)] bg-white"
+            className="h-16 animate-pulse rounded-[12px] border border-[var(--mac-border)] bg-surface"
           />
         ))}
       </div>
@@ -77,7 +77,7 @@ export const NewsView: React.FC = () => {
 
   if (error) {
     return (
-      <div className="m-4 rounded-[14px] border border-[var(--mac-border)] bg-white p-5 text-[12px] text-foreground/54 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
+      <div className="m-4 rounded-[14px] border border-[var(--mac-border)] bg-surface p-5 text-[12px] text-foreground/54 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
         {t('security.news.unavailable', { error })}
       </div>
     );
@@ -85,21 +85,21 @@ export const NewsView: React.FC = () => {
 
   if (!news || news.length === 0) {
     return (
-      <div className="m-4 flex min-h-32 items-center justify-center rounded-[14px] border border-[var(--mac-border)] bg-white p-4 text-[13px] text-foreground/44 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
+      <div className="m-4 flex min-h-32 items-center justify-center rounded-[14px] border border-[var(--mac-border)] bg-surface p-4 text-[13px] text-foreground/44 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
         {t('security.news.none')}
       </div>
     );
   }
 
   return (
-    <ul className="m-4 overflow-hidden rounded-[14px] border border-[var(--mac-border)] bg-white shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
+    <ul className="m-4 overflow-hidden rounded-[14px] border border-[var(--mac-border)] bg-surface shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
       {news.map((item) => (
         <li key={item.id}>
           <a
             href={item.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-start gap-3 border-b border-[var(--mac-border)]/70 px-4 py-3.5 transition-colors last:border-b-0 hover:bg-[#f7f8fa]"
+            className="group flex items-start gap-3 border-b border-[var(--mac-border)]/70 px-4 py-3.5 transition-colors last:border-b-0 hover:bg-surface-muted"
           >
             <div className="min-w-0 flex-1">
               <div className="text-[13px] font-medium leading-snug text-foreground group-hover:text-[var(--mac-blue)]">

@@ -23,7 +23,7 @@ export const HoldingRow: React.FC<HoldingRowProps> = ({ holding, onClick, onRese
 
   return (
     <div
-      className="group grid cursor-pointer grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-3 rounded-[13px] border border-[var(--mac-border)] bg-white p-3.5 transition-[border-color,box-shadow,transform] hover:-translate-y-px hover:border-[var(--mac-blue)]/35 hover:shadow-[0_4px_14px_rgba(15,23,42,0.06)] active:translate-y-0 sm:grid-cols-[minmax(0,1fr)_auto_auto_auto]"
+      className="group grid cursor-pointer grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-3 rounded-[13px] border border-[var(--mac-border)] bg-surface p-3.5 transition-[border-color,box-shadow,transform] hover:-translate-y-px hover:border-[var(--mac-blue)]/35 hover:shadow-[0_4px_14px_rgba(15,23,42,0.06)] active:translate-y-0 sm:grid-cols-[minmax(0,1fr)_auto_auto_auto]"
       onClick={onClick}
     >
       <div className="flex-1">
@@ -67,7 +67,7 @@ export const HoldingRow: React.FC<HoldingRowProps> = ({ holding, onClick, onRese
             onResearch();
           }}
           data-testid={`holding-research-${holding.symbol}`}
-          className="col-span-2 flex shrink-0 items-center justify-center gap-1.5 rounded-[8px] bg-[#0052ff] px-2.5 py-1.5 text-[11.5px] font-semibold text-white transition-colors hover:bg-[#0047d9] active:scale-[0.98] sm:col-span-1"
+          className="col-span-2 flex shrink-0 items-center justify-center gap-1.5 rounded-[8px] bg-primary px-2.5 py-1.5 text-[11.5px] font-semibold text-primary-foreground transition-colors hover:bg-primary/90 active:scale-[0.98] sm:col-span-1"
         >
           <Search className="h-3 w-3" strokeWidth={1.9} />
           {t('research.symbolEntry.startShort')}

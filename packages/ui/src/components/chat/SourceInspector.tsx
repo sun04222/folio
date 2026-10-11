@@ -124,7 +124,7 @@ const SourceDetails: React.FC<{
   return (
     <div className="flex flex-col gap-2" data-testid="source-details">
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1 rounded-[10px] border mac-list-row px-3 py-2 text-[11.5px]">
-        <span className="flex items-center gap-1 text-positive">
+        <span className="flex items-center gap-1 text-success">
           <Check className="h-3 w-3" />
           {t('agent.sources.verified')}
         </span>

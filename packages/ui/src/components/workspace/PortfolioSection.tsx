@@ -101,9 +101,9 @@ export const PortfolioSection: React.FC = () => {
 
   if (cache.loading && !view) {
     return (
-      <div className="space-y-3 bg-[#f7f8fa] p-4">
-        <div className="h-24 animate-pulse rounded-[14px] border border-[var(--mac-border)] bg-white" />
-        <div className="h-32 animate-pulse rounded-[14px] border border-[var(--mac-border)] bg-white" />
+      <div className="space-y-3 bg-surface-muted p-4">
+        <div className="h-24 animate-pulse rounded-[14px] border border-[var(--mac-border)] bg-surface" />
+        <div className="h-32 animate-pulse rounded-[14px] border border-[var(--mac-border)] bg-surface" />
         {riskSection}
       </div>
     );
@@ -111,8 +111,8 @@ export const PortfolioSection: React.FC = () => {
 
   if (!view && cache.failure) {
     return (
-      <div className="space-y-3 bg-[#f7f8fa] p-4">
-        <div className="rounded-[14px] border border-[var(--mac-border)] bg-white p-4 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
+      <div className="space-y-3 bg-surface-muted p-4">
+        <div className="rounded-[14px] border border-[var(--mac-border)] bg-surface p-4 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
           <div className="text-[13px] font-semibold text-foreground">
             {t(FAILURE_HEADINGS[cache.failure.kind])}
           </div>
@@ -125,7 +125,7 @@ export const PortfolioSection: React.FC = () => {
 
   if (!view) {
     return (
-      <div className="space-y-3 bg-[#f7f8fa] p-4">
+      <div className="space-y-3 bg-surface-muted p-4">
         <div className="text-[13px] text-foreground/44">{t('portfolio.noPortfolioData')}</div>
         {riskSection}
       </div>
@@ -154,7 +154,7 @@ export const PortfolioSection: React.FC = () => {
     : 'Longbridge';
 
   return (
-    <div className="folio-portfolio-view space-y-4 overflow-y-auto bg-[#f7f8fa] p-4" data-testid="portfolio-view">
+    <div className="folio-portfolio-view space-y-4 overflow-y-auto bg-surface-muted p-4" data-testid="portfolio-view">
       <div className="flex items-center justify-between">
         <div>
           <h2 className="text-[18px] font-semibold tracking-[-0.03em] text-foreground">{t('portfolio.title')}</h2>
@@ -166,12 +166,12 @@ export const PortfolioSection: React.FC = () => {
       </div>
 
       {showAccountSelector && (
-        <label className="flex flex-wrap items-center gap-2 rounded-[12px] border border-[var(--mac-border)] bg-white px-3 py-2 text-[12px] text-foreground/54">
+        <label className="flex flex-wrap items-center gap-2 rounded-[12px] border border-[var(--mac-border)] bg-surface px-3 py-2 text-[12px] text-foreground/54">
           {t('portfolio.account')}
           <select
             value={selectedAccount ?? ''}
             onChange={(e) => setSelectedAccount(e.target.value === '' ? null : e.target.value)}
-            className="rounded-[8px] border border-[var(--mac-border)] bg-white px-2 py-1 text-[12px] text-foreground outline-none focus:border-[var(--mac-blue)]"
+            className="rounded-[8px] border border-[var(--mac-border)] bg-surface px-2 py-1 text-[12px] text-foreground outline-none focus:border-[var(--mac-blue)]"
           >
             <option value="">{t('portfolio.allAccounts')}</option>
             {view.accounts.map((account) => (
@@ -218,7 +218,7 @@ export const PortfolioSection: React.FC = () => {
         </div>
       </div>
 
-      <div className="rounded-[10px] border border-[var(--mac-border)]/70 bg-white/60 px-3 py-2 text-[11px] text-foreground/44">
+      <div className="rounded-[10px] border border-[var(--mac-border)]/70 bg-surface/60 px-3 py-2 text-[11px] text-foreground/44">
         {freshnessProvider} · {formatFreshness(t, view.snapshot.fetchedAt)}
       </div>
 

@@ -118,7 +118,7 @@ export const FailureModesTab: React.FC<{
 
   if (experiments.length === 0) {
     return (
-      <div className="rounded-[10px] border border-[var(--mac-border)] bg-white p-4 text-[12px] text-foreground/48 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
+      <div className="rounded-[10px] border border-[var(--mac-border)] bg-surface p-4 text-[12px] text-foreground/48 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
         {t('evaluation.noExperimentsToInspect')}
       </div>
     );
@@ -126,7 +126,7 @@ export const FailureModesTab: React.FC<{
 
   return (
     <div className="space-y-3" data-testid="failure-modes-tab">
-      <div className="rounded-[10px] border border-[var(--mac-border)] bg-white p-3 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
+      <div className="rounded-[10px] border border-[var(--mac-border)] bg-surface p-3 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
         <div className="flex flex-wrap items-center gap-1.5">
         <button
           type="button"
@@ -157,12 +157,12 @@ export const FailureModesTab: React.FC<{
         </div>
       </div>
 
-      <div className="flex items-center justify-between gap-3 rounded-[10px] border border-[var(--mac-border)] bg-white px-3 py-2.5 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
+      <div className="flex items-center justify-between gap-3 rounded-[10px] border border-[var(--mac-border)] bg-surface px-3 py-2.5 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
         <p className="text-[11px] text-foreground/44">
           {loading ? t('evaluation.loadingDetails') : t('evaluation.failureSummary', { modes: rows.length, failures: totalFailures })}
         </p>
         <input
-          className="h-8 w-56 rounded-[7px] border border-[var(--mac-border)] bg-white px-3 text-[12px] text-foreground placeholder:text-foreground/38 focus:border-[var(--mac-blue)] focus:outline-none focus:ring-2 focus:ring-[var(--mac-blue)]/18"
+          className="h-8 w-56 rounded-[7px] border border-[var(--mac-border)] bg-surface px-3 text-[12px] text-foreground placeholder:text-foreground/38 focus:border-[var(--mac-blue)] focus:outline-none focus:ring-2 focus:ring-[var(--mac-blue)]/18"
           value={caseQuery}
           onChange={(e) => setCaseQuery(e.target.value)}
           placeholder={t('evaluation.filterByCaseId')}
@@ -176,13 +176,13 @@ export const FailureModesTab: React.FC<{
           <Spinner /> {t('evaluation.loadingExperimentDetails')}
         </div>
       ) : rows.length === 0 ? (
-        <div className="rounded-[10px] border border-[var(--mac-border)] bg-white p-4 text-[12px] text-foreground/48 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
+        <div className="rounded-[10px] border border-[var(--mac-border)] bg-surface p-4 text-[12px] text-foreground/48 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
           {caseQuery.trim() ? t('evaluation.noFailureMatch') : t('evaluation.noFailureModesRecorded')}
         </div>
       ) : (
         <div className="space-y-2.5">
           {rows.map((row) => (
-            <div key={row.mode} className="rounded-[10px] border border-[var(--mac-border)] bg-white p-4 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
+            <div key={row.mode} className="rounded-[10px] border border-[var(--mac-border)] bg-surface p-4 shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
               <div className="flex items-center justify-between gap-3">
                 <div className="flex items-center gap-2">
                   <span className="text-[13px] font-semibold text-foreground">

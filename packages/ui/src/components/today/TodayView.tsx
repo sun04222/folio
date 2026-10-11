@@ -383,8 +383,8 @@ const QuickAction: React.FC<{
   tone: 'blue' | 'green' | 'violet'
   onClick: () => void
 }> = ({ icon: Icon, label, hint, tone, onClick }) => (
-  <button type="button" onClick={onClick} className={`folio-quick-action group flex items-center gap-3 rounded-[9px] border border-border px-3 py-2.5 text-left transition-smooth hover:border-[var(--mac-blue)]/35 hover:bg-[var(--mac-blue-soft)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/25 ${tone === 'blue' ? 'bg-accent/5' : tone === 'green' ? 'bg-positive/5' : 'bg-info/5'}`}>
-    <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-[8px] ${tone === 'blue' ? 'bg-accent/10 text-accent' : tone === 'green' ? 'bg-positive/10 text-positive' : 'bg-info/10 text-info'}`}><Icon className="h-4 w-4" strokeWidth={1.8} /></span>
+  <button type="button" onClick={onClick} className={`folio-quick-action group flex items-center gap-3 rounded-[9px] border border-border px-3 py-2.5 text-left transition-smooth hover:border-[var(--mac-blue)]/35 hover:bg-[var(--mac-blue-soft)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/25 ${tone === 'blue' ? 'bg-accent/5' : tone === 'green' ? 'bg-success/5' : 'bg-info/5'}`}>
+    <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-[8px] ${tone === 'blue' ? 'bg-accent/10 text-accent' : tone === 'green' ? 'bg-success/10 text-success' : 'bg-info/10 text-info'}`}><Icon className="h-4 w-4" strokeWidth={1.8} /></span>
     <span className="min-w-0 flex-1"><span className="block text-[12px] font-semibold text-foreground">{label}</span><span className="mt-0.5 block truncate text-[11px] text-foreground/44">{hint}</span></span>
     <ArrowUpRight className="h-3.5 w-3.5 text-accent/55 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
   </button>

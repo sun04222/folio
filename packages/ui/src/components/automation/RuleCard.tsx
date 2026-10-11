@@ -91,7 +91,7 @@ export const RuleCard: React.FC<RuleCardProps> = ({
         <div className="min-w-0">
           <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
             <div className="text-[13px] font-semibold text-foreground">{label}</div>
-            <span className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${rule.enabled ? 'bg-positive/10 text-positive' : 'bg-foreground/7 text-foreground/48'}`}>
+            <span className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${rule.enabled ? 'bg-success/10 text-success' : 'bg-foreground/7 text-foreground/48'}`}>
               {rule.enabled ? t('automation.status.active') : t('automation.status.paused')}
             </span>
           </div>
@@ -120,7 +120,7 @@ export const RuleCard: React.FC<RuleCardProps> = ({
             }`}
           >
             <span
-              className={`block h-4 w-4 rounded-full bg-white transition-transform ${
+              className={`block h-4 w-4 rounded-full bg-surface transition-transform ${
                 rule.enabled ? 'translate-x-[18px]' : 'translate-x-0.5'
               }`}
             />

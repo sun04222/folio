@@ -143,7 +143,7 @@ export const SkillDetailDrawer: React.FC<SkillDetailDrawerProps> = ({
 
   return createPortal(
     <div className="fixed inset-0 z-(--z-index-modal)">
-      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} aria-hidden="true" />
+      <div className="absolute inset-0 bg-background/50 backdrop-blur-sm" onClick={onClose} aria-hidden="true" />
       <aside
         role="dialog"
         aria-modal="true"

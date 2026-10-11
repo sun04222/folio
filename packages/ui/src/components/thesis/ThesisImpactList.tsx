@@ -14,29 +14,29 @@ export const ThesisImpactList: React.FC<{ impacts: ThesisImpact[] }> = ({ impact
   const { t } = useTranslation();
   if (impacts.length === 0) {
     return (
-      <div className="rounded-[10px] border border-dashed border-[#dfe5ed] bg-white px-4 py-7 text-center text-[12px] text-foreground/44">
+      <div className="rounded-[10px] border border-dashed border-border bg-surface px-4 py-7 text-center text-[12px] text-foreground/44">
         {t('thesis.impact.noneYet')}
       </div>
     );
   }
 
   return (
-    <div className="folio-thesis-impact-list overflow-hidden rounded-[10px] border border-[#dfe5ed] bg-white shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
+    <div className="folio-thesis-impact-list overflow-hidden rounded-[10px] border border-border bg-surface shadow-[0_1px_2px_rgba(15,23,42,0.035)]">
       {impacts.map((impact) => {
         const badge = KIND_BADGE[impact.kind];
         return (
           <div
             key={impact.id}
-            className="border-b border-[#edf0f4] px-3 py-3 transition-smooth last:border-b-0 hover:bg-[#f8fbff]"
+            className="border-b border-border px-3 py-3 transition-smooth last:border-b-0 hover:bg-surface"
           >
             <div className="flex flex-wrap items-center gap-2">
               <span
-                className="inline-flex items-center rounded-[5px] border border-[#dfe5ed] bg-[#f7f9fc] px-1.5 py-0.5 text-[9.5px] font-semibold uppercase tracking-[0.08em]"
+                className="inline-flex items-center rounded-[5px] border border-border bg-surface-muted px-1.5 py-0.5 text-[9.5px] font-semibold uppercase tracking-[0.08em]"
                 style={{ color: badge.color }}
               >
                 {t(`thesis.impact.${impact.kind}`)}
               </span>
-              <span className="font-mono text-[10px] tabular-nums text-[#8792a3]">
+              <span className="font-mono text-[10px] tabular-nums text-text-muted">
                 {new Date(impact.evaluatedAt).toLocaleDateString()}
               </span>
             </div>

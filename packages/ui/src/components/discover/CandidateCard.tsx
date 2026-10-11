@@ -169,7 +169,7 @@ export const CandidateCard: React.FC<CandidateCardProps> = ({ candidate, onActio
                 className="flex w-full items-center gap-1.5 rounded-[8px] px-2.5 py-1.5 text-left text-[12px] text-foreground/85 transition-smooth hover:bg-surface-hover"
                 data-testid={`candidate-watch-${candidate.symbol}`}
               >
-                {watched && <Check className="h-3.5 w-3.5 text-positive" />}
+                {watched && <Check className="h-3.5 w-3.5 text-success" />}
                 {watched ? t('discover.added') : t('discover.watch')}
               </button>
             </div>

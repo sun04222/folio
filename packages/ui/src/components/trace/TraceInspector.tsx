@@ -26,15 +26,15 @@ const SOURCE_BADGE: Record<string, string> = {
   'trace-event': 'bg-info/10 text-info',
   run: 'bg-foreground/6 text-foreground/60',
   evaluation: 'bg-warning/10 text-warning',
-  langsmith: 'bg-positive/10 text-positive',
+  langsmith: 'bg-success/10 text-success',
   langfuse: 'bg-info/10 text-info',
 };
 
 const StepIcon: React.FC<{ step: TraceStep }> = ({ step }) => {
   if (step.kind === 'tool') {
-    if (step.status === 'error') return <X className="h-3.5 w-3.5 shrink-0 text-negative" />;
+    if (step.status === 'error') return <X className="h-3.5 w-3.5 shrink-0 text-danger" />;
     if (step.status === 'running') return <LoaderCircle className="h-3.5 w-3.5 shrink-0 animate-spin text-accent" />;
-    return <Check className="h-3.5 w-3.5 shrink-0 text-positive" />;
+    return <Check className="h-3.5 w-3.5 shrink-0 text-success" />;
   }
   if (step.kind === 'user') return <Circle className="h-3 w-3 shrink-0 text-accent" />;
   if (step.kind === 'runtime') return <LoaderCircle className="h-3 w-3 shrink-0 text-foreground/38" />;
@@ -47,7 +47,7 @@ const ContextSourceBadge: React.FC<{ source: TraceContextField['source'] }> = ({
     source === 'evaluation-input'
       ? 'bg-info/12 text-info'
       : source === 'live'
-        ? 'bg-positive/12 text-positive'
+        ? 'bg-success/12 text-success'
         : source === 'not-recorded'
           ? 'bg-foreground/6 text-foreground/42'
           : 'bg-foreground/8 text-foreground/64';
@@ -174,7 +174,7 @@ const OverviewTab: React.FC<{ trace: FolioTrace }> = ({ trace }) => {
             </span>
             {trace.evaluation.failureMode && (
               <span className="text-foreground/62">
-                {t('trace.evaluation.failureMode')}: <span className="font-mono text-negative">{trace.evaluation.failureMode}</span>
+                {t('trace.evaluation.failureMode')}: <span className="font-mono text-danger">{trace.evaluation.failureMode}</span>
               </span>
             )}
           </div>
@@ -253,7 +253,7 @@ const TimelineStep: React.FC<{ step: TraceStep }> = ({ step }) => {
           )}
           <div className="flex flex-wrap gap-x-3 gap-y-0.5">
             {step.tool.resultType && <span>{t('trace.overview.answer')}: {step.tool.resultType}</span>}
-            {step.tool.error && <span className="text-negative">{step.tool.error}</span>}
+            {step.tool.error && <span className="text-danger">{step.tool.error}</span>}
             <span className="text-foreground/34">{t(semanticElementSourceLabelKey(step.source))}</span>
           </div>
         </div>

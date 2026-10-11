@@ -18,15 +18,15 @@ interface DailyBriefSectionProps {
 const SOURCE_DOT: Record<BriefItemSource, string> = {
   Portfolio: 'bg-[var(--mac-accent)]',
   Watchlist: 'bg-[var(--mac-green)]',
-  Thesis: 'bg-[#a78bfa]',
+  Thesis: 'bg-accent',
   Alert: 'bg-[var(--mac-red)]',
   Automation: 'bg-foreground/40',
 }
 
 const SEVERITY_RAIL: Record<BriefSeverity, string> = {
-  critical: 'bg-[#d92d20]',
-  warning: 'bg-[#f79009]',
-  info: 'bg-[#98a2b3]',
+  critical: 'bg-danger',
+  warning: 'bg-warning',
+  info: 'bg-info',
 }
 
 function briefTitle(item: BriefItem, t: TFunction): string {
@@ -84,7 +84,7 @@ export const DailyBriefSection: React.FC<DailyBriefSectionProps> = ({ onManage }
             </div>
           </div>
           <div className="folio-daily-brief-updated">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#12b76a]" />
+            <span className="h-1.5 w-1.5 rounded-full bg-[var(--mac-green)]" />
             {t('today.dailyBriefUpdated')}
           </div>
           <span className="sr-only">{activeBrief.summary}</span>

@@ -141,7 +141,7 @@ export const ExportMenu: React.FC<ExportMenuProps> = ({ report }) => {
             </button>
           ))}
           {error && (
-            <div className="px-2.5 pb-1.5 pt-1 text-[11px] text-negative" data-testid="export-menu-error">
+            <div className="px-2.5 pb-1.5 pt-1 text-[11px] text-danger" data-testid="export-menu-error">
               {error}
             </div>
           )}

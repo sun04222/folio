@@ -46,24 +46,24 @@ function formatSampleCount(samples: number): string {
 }
 
 const HEADER_CELL =
-  'border-b border-[#e2e7ef] bg-[#f7f9fc] px-3 py-2 text-left text-[9.5px] font-semibold uppercase tracking-[0.08em] text-[#7f8b9d]';
-const BODY_CELL = 'border-t border-[#edf0f4] px-3 py-2 text-[12px] leading-5 text-foreground/80';
+  'border-b border-border bg-surface-muted px-3 py-2 text-left text-[9.5px] font-semibold uppercase tracking-[0.08em] text-text-muted';
+const BODY_CELL = 'border-t border-border px-3 py-2 text-[12px] leading-5 text-foreground/80';
 
 /** Renders one calibration table card; `rows: []` shows the empty message. */
 export const CalibrationCard: React.FC<CalibrationCardProps> = ({ title, rows, emptyMessage }) => {
   const { t } = useTranslation();
   return (
     <section
-      className="overflow-hidden rounded-[10px] border border-[#dfe5ed] bg-white shadow-[0_1px_2px_rgba(15,23,42,0.035)]"
+      className="overflow-hidden rounded-[10px] border border-border bg-surface shadow-[0_1px_2px_rgba(15,23,42,0.035)]"
       data-testid="calibration-card"
     >
-      <div className="flex items-baseline justify-between gap-3 border-b border-[#e2e7ef] bg-[#fbfcfe] px-4 py-3">
+      <div className="flex items-baseline justify-between gap-3 border-b border-border bg-surface px-4 py-3">
         <h4 className="text-[11px] font-semibold uppercase tracking-[0.08em] text-foreground">{title}</h4>
         <p className="text-right text-[10px] tabular-nums text-text-muted">
           {t('performance.finalWeightBounded', { min: WEIGHT_BOUNDS.min.toFixed(2), max: WEIGHT_BOUNDS.max.toFixed(2) })}
         </p>
       </div>
-      <p className="border-b border-[#edf0f4] px-4 py-2 text-[10px] leading-4 text-text-muted">
+      <p className="border-b border-border px-4 py-2 text-[10px] leading-4 text-text-muted">
         {t('performance.calibrationNote', { min: MIN_CALIBRATION_SAMPLES })}
       </p>
       {rows.length === 0 ? (
@@ -85,7 +85,7 @@ export const CalibrationCard: React.FC<CalibrationCardProps> = ({ title, rows, e
               {rows.map((row) => (
                 <tr
                   key={row.id}
-                  className="group hover:bg-[#f8fbff]"
+                  className="group hover:bg-surface"
                   data-testid={`calibration-row-${row.id}`}
                 >
                   <td className={`${BODY_CELL} font-medium text-foreground`}>{row.label}</td>
@@ -102,7 +102,7 @@ export const CalibrationCard: React.FC<CalibrationCardProps> = ({ title, rows, e
                   <td className={`${BODY_CELL} text-right`}>
                     {row.insufficientData && (
                       <span
-                        className="inline-flex items-center rounded-[5px] border border-dashed border-[#b8c2d1] bg-[#f8fafc] px-1.5 py-0.5 text-[9.5px] font-medium text-[#66758a]"
+                        className="inline-flex items-center rounded-[5px] border border-dashed border-border-strong bg-surface-muted px-1.5 py-0.5 text-[9.5px] font-medium text-text-muted"
                         data-testid="observational-badge"
                       >
                         {t('performance.observationalOnly')}

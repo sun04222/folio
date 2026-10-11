@@ -105,7 +105,7 @@ export const SecurityHeader: React.FC = () => {
 
   if (error) {
     return (
-      <div className="mx-4 mt-4 rounded-[16px] border border-[var(--mac-border)] bg-white px-5 py-4 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
+      <div className="mx-4 mt-4 rounded-[16px] border border-[var(--mac-border)] bg-surface px-5 py-4 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
         <div
           className="text-[13px] font-semibold uppercase tracking-wide text-foreground/72"
           data-testid="security-header-symbol"
@@ -121,7 +121,7 @@ export const SecurityHeader: React.FC = () => {
 
   if (loading || !quote) {
     return (
-      <div className="mx-4 mt-4 rounded-[16px] border border-[var(--mac-border)] bg-white px-5 py-4 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
+      <div className="mx-4 mt-4 rounded-[16px] border border-[var(--mac-border)] bg-surface px-5 py-4 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
         <div className="flex items-center gap-2">
           <div className="h-4 w-24 animate-pulse rounded bg-foreground/10" />
           <div className="h-4 w-12 animate-pulse rounded bg-foreground/8" />
@@ -146,7 +146,7 @@ export const SecurityHeader: React.FC = () => {
   ];
 
   return (
-    <div className="mx-4 mt-4 rounded-[16px] border border-[var(--mac-border)] bg-white px-5 py-4 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
+    <div className="mx-4 mt-4 rounded-[16px] border border-[var(--mac-border)] bg-surface px-5 py-4 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
         <div className="min-w-0">
           <div className="flex items-center gap-2">
@@ -185,7 +185,7 @@ export const SecurityHeader: React.FC = () => {
         <div className="flex items-center gap-2">
           <button
             onClick={() => setNavSection('research')}
-            className="rounded-[9px] bg-[#0052ff] px-3.5 py-2 text-[12px] font-semibold text-white transition-colors hover:bg-[#0047d9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0052ff]/40 active:scale-[0.98]"
+            className="rounded-[9px] bg-primary px-3.5 py-2 text-[12px] font-semibold text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40 active:scale-[0.98]"
             data-testid="deep-research-button"
           >
             {t('security.header.deepResearch')}

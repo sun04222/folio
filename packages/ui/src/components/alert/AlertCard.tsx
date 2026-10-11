@@ -95,7 +95,7 @@ export const AlertCard: React.FC<AlertCardProps> = ({ rule, onToggle, onRemove }
               <div className="font-semibold text-foreground">{displaySymbol}</div>
               <span
                 className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${
-                  rule.enabled ? 'bg-positive/10 text-positive' : 'bg-foreground/7 text-foreground/48'
+                  rule.enabled ? 'bg-success/10 text-success' : 'bg-foreground/7 text-foreground/48'
                 }`}
               >
                 {rule.enabled ? t('alerts.status.active') : t('alerts.status.paused')}
@@ -118,7 +118,7 @@ export const AlertCard: React.FC<AlertCardProps> = ({ rule, onToggle, onRemove }
             }`}
           >
             <div
-              className={`block h-4 w-4 rounded-full bg-white transition-transform ${
+              className={`block h-4 w-4 rounded-full bg-surface transition-transform ${
                 rule.enabled ? 'translate-x-[18px]' : 'translate-x-0.5'
               }`}
             />
@@ -126,7 +126,7 @@ export const AlertCard: React.FC<AlertCardProps> = ({ rule, onToggle, onRemove }
           <button
             onClick={onRemove}
             aria-label={t('alerts.removeAlert')}
-            className="flex h-7 w-7 items-center justify-center rounded-[7px] text-lg leading-none text-foreground/35 transition-colors hover:bg-negative/10 hover:text-negative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="flex h-7 w-7 items-center justify-center rounded-[7px] text-lg leading-none text-foreground/35 transition-colors hover:bg-danger/10 hover:text-danger focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             <span aria-hidden="true">×</span>
           </button>

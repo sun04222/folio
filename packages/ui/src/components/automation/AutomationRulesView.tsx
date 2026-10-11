@@ -54,7 +54,7 @@ export const AutomationRulesView: React.FC = () => {
     return <div className="rounded-[10px] border border-border bg-surface-raised px-4 py-8 text-[12px] text-foreground/45">{t('automation.loading')}</div>
   }
   if (error !== null && rules.length === 0) {
-    return <div className="rounded-[10px] border border-negative/20 bg-negative/5 px-4 py-3 text-[12px] text-negative">{error}</div>
+    return <div className="rounded-[10px] border border-danger/20 bg-danger/5 px-4 py-3 text-[12px] text-danger">{error}</div>
   }
   if (rules.length === 0) {
     return (

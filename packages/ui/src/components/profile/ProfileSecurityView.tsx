@@ -11,8 +11,8 @@ import { Button } from '../primitives/Button';
 type LoadState = 'loading' | 'ready';
 
 const CheckStatus: React.FC<{ ok: boolean | null }> = ({ ok }) => {
-  if (ok === true) return <CircleCheck className="h-4 w-4 text-positive" aria-hidden="true" />;
-  if (ok === false) return <CircleAlert className="h-4 w-4 text-negative" aria-hidden="true" />;
+  if (ok === true) return <CircleCheck className="h-4 w-4 text-success" aria-hidden="true" />;
+  if (ok === false) return <CircleAlert className="h-4 w-4 text-danger" aria-hidden="true" />;
   return <span className="h-2 w-2 rounded-full bg-foreground/25" aria-hidden="true" />;
 };
 
