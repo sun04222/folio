@@ -11,10 +11,11 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [mode, setMode] = useState<ThemeMode>(() => {
     try {
       const saved = window.localStorage.getItem(STORAGE_KEY);
-      return saved === 'light' || saved === 'dark' || saved === 'system' ? saved : 'light';
-    } catch {
-      return 'light';
-    }
+      if (saved === 'light' || saved === 'dark' || saved === 'system') return saved;
+    } catch { /* storage unavailable */ }
+    // 默认深色：本产品的视觉语言以「终端专业风」为准（深色底 + 琥珀强调），
+    // 浅色作为可选项保留，而不是反过来。
+    return 'dark';
   });
 
   useEffect(() => {
